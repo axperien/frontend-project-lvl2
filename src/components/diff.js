@@ -7,7 +7,7 @@ const getDataFromFile = (filepath) => fs.readFileSync(path.resolve(filepath), 'u
   return fd;
 });
 
-const makeString = (key, value, symbol = ' ') => `${symbol} ${key}: ${value}\n`;
+const makeString = (key, value, symbol = ' ') => `  ${symbol} ${key}: ${value}\n`;
 
 export default (pathToFile1, pathToFile2) => {
   const fileData1 = getDataFromFile(pathToFile1);
@@ -43,5 +43,5 @@ export default (pathToFile1, pathToFile2) => {
     return string;
   }, compare);
 
-  console.log(result);
+  console.log(`{\n${result}}`);
 };
